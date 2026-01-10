@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import backgroundImage from '@/assets/bgdummy.webp';
 import schoolLogo from '@/assets/logodummy.webp';
 import { Dashboard } from './pages/Dashboard';
-import ClassDetailPage  from './pages/ClassDetailPage';
+import ClassDetailPage from './pages/ClassDetailPage';
 
 type UserRole = 'murid' | 'guru' | 'admin';
 
@@ -50,18 +50,12 @@ function LoginPage({ onLogin }: { onLogin: () => void }) {
   };
 
   return (
-    <div className="min-h-screen w-full relative flex items-center justify-center lg:justify-start px-4 sm:px-8 lg:px-24 overflow-hidden font-sans selection:bg-blue-100 selection:text-blue-600">
+    <div className="min-h-screen w-full relative flex items-center justify-center lg:justify-start px-4 sm:px-8 lg:px-20 overflow-hidden font-sans selection:bg-blue-100 selection:text-blue-600">
       {/* Background */}
       <div
-        className="fixed inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-1000 scale-105"
+        className="fixed inset-0 bg-cover bg-top bg-no-repeat"
         style={{ backgroundImage: `url(${backgroundImage})` }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/60 via-purple-900/40 to-black/70 backdrop-blur-[2px]"></div>
-      </div>
-
-      {/* Decorative Circles */}
-      <div className="fixed -top-24 -left-24 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
-      <div className="fixed -bottom-24 -right-24 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse delay-700"></div>
+      />
 
       <motion.div
         initial={{ x: -100, opacity: 0 }}
@@ -252,7 +246,7 @@ export default function App() {
             <LoginPage onLogin={handleLogin} />
           )
         } />
-        
+
         {/* Route untuk dashboard */}
         <Route path="/dashboard" element={
           isAuthenticated ? (
@@ -265,7 +259,7 @@ export default function App() {
             <Navigate to="/login" replace />
           )
         } />
-        
+
         <Route path="/class/:classId" element={
           isAuthenticated ? (
             <ClassDetailPage />
@@ -273,12 +267,12 @@ export default function App() {
             <Navigate to="/login" replace />
           )
         } />
-        
+
         {/* Redirect root berdasarkan status login */}
         <Route path="/" element={
           <Navigate to={isAuthenticated ? "/dashboard" : "/login"} replace />
         } />
-        
+
         {/* Catch all route */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
