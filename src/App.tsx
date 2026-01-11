@@ -61,7 +61,7 @@ function LoginPage({ onLogin }: { onLogin: () => void }) {
         initial={{ x: -100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="relative z-10 w-full max-w-lg"
+        className="relative z-10 w-full max-w-lg lg:mt-16"
       >
         <div className="bg-white/85 backdrop-blur-xl rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.3)] border border-white/20 p-8 sm:p-12 overflow-hidden">
           {/* Logo Section */}

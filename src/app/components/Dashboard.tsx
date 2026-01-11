@@ -477,7 +477,12 @@ function BimbinganPage() {
         <School className="mx-auto text-blue-100 mb-6" size={80} />
         <h2 className="text-2xl font-bold mb-4">Butuh Bantuan Extra?</h2>
         <p className="text-slate-500 max-w-lg mx-auto mb-8 font-medium">Layanan Bimbingan Belajar (Bimbel) kami menyediakan guru-guru pilihan untuk membantu Anda menguasai materi tersulit.</p>
-        <button className="px-10 py-4 bg-blue-600 text-white rounded-[1.5rem] font-bold shadow-lg shadow-blue-500/20">Hubungi Konselor</button>
+        <button
+          onClick={() => window.open('https://kidemyofficial.netlify.app/', '_blank')}
+          className="px-10 py-4 bg-blue-600 text-white rounded-[1.5rem] font-bold shadow-lg shadow-blue-500/20"
+        >
+          Hubungi Konselor
+        </button>
       </div>
     </div>
   );
